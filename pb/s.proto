@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = ".;pb";
+
+service SampleServer {
+	rpc Hello(HelloRequest) returns (HelloResponse);
+	rpc UnimplemetedMethod (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+	string name = 1;
+}
+
+message HelloResponse {
+	string name = 1;
+}
